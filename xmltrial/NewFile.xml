@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<note xmlns="http://www.example.org/NewXMLSchema"  
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.example.org/NewXMLSchema NewXMLSchema.xsd ">
+  <to>wert</to>
+  <from>asdf</from>
+  <heading>heading</heading>
+  
+</note>

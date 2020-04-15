@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!-- indicates that the elements and data types used in the schema come from the "http://www.w3.org/2001/XMLSchema -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/NewXMLSchema"
+	xmlns:tns="http://www.example.org/NewXMLSchema"
+	elementFormDefault="qualified">
+
+	<xs:element name="note">
+		<xs:complexType>
+			<xs:sequence> 
+				<xs:element name="to" type="xs:string" />
+				<xs:element name="from" type="xs:string" />
+				<xs:element name="heading" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+		
+	</xs:element>
+
+
+</xs:schema>

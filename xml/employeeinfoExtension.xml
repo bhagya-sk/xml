@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:employee
+	xmlns:tns="http://www.example.org/personinfoXMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/personinfoXMLSchema personinfoXMLSchema.xsd ">
+
+	<tns:firstname>yuierb</tns:firstname>
+	<tns:lastname>ghjjk</tns:lastname>
+	<tns:address>qweer hjjkbnk</tns:address>
+	<tns:city>kalaburagi</tns:city>
+
+</tns:employee>

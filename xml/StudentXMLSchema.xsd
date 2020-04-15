@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/StudentXMLSchema"
+	xmlns:tns="http://www.example.org/StudentXMLSchema"
+	elementFormDefault="qualified">
+
+	<element name="students">
+		<complexType>
+			<sequence>
+				<element name="name" type="string"></element>
+				<element name="roll_no" type="int"></element>
+
+				<element name="address">
+					<complexType>
+						<sequence>
+							<element name="city" type="string"></element>
+							<element name="H_NO" type="int"></element>
+							<element name="pincode" type="tns:pincodetype"></element>
+						</sequence>
+					</complexType>
+				</element>
+
+				<element name="subjects">
+					<complexType>
+						<sequence>
+						
+							<element name="subject" maxOccurs="4">
+							<complexType>
+							  <sequence>
+							    <element name="marks" type="int"></element> 
+							    <element name="maxmarks" type="int"></element>
+							  </sequence>
+							</complexType>
+							</element>
+						
+						</sequence>
+					</complexType>
+				</element>
+
+			</sequence>
+		</complexType>
+	</element>
+
+	<simpleType name="pincodetype">
+		<restriction base="string">
+		<maxLength value="6"></maxLength>
+		<!--<pattern value="[0-9]{6}"></pattern>  -->	
+		</restriction>
+	</simpleType>
+	
+</schema>

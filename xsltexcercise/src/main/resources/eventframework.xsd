@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+
+	<element name="EventFramework">
+		<complexType>
+			<sequence>
+
+				<element name="DispatchChanels">
+					<complexType>
+						<sequence>
+
+							<element name="DispatchChanel" maxOccurs="unbounded">
+								<complexType>
+									<sequence>
+
+										<element name="ChanelImplementation" minOccurs="0"
+											maxOccurs="unbounded">
+											<complexType>
+												<attribute name="beanRefid" type="string"
+													use="required"></attribute>
+												<attribute name="fqcn" type="string"
+													use="required"></attribute>
+											</complexType>
+										</element>
+
+										<element name="ChanelConfiguration" type="string"></element>
+
+									</sequence>
+
+									<attribute name="description" type="string"></attribute>
+									<attribute name="id" type="string"></attribute>
+									<attribute name="isEnabled" type="boolean"></attribute>
+
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+
+				<element name="SystemEvents" minOccurs="0">
+					<complexType>
+						<sequence>
+
+							<element name="SystemEvent" minOccurs="0"
+								maxOccurs="unbounded">
+								<complexType>
+									<sequence>
+
+										<element name="CamelSystemEventBuilder" minOccurs="0"
+											maxOccurs="unbounded">
+											<complexType>
+												<attribute name="beanRefid" type="string"></attribute>
+												<attribute name="fqcn" type="string"></attribute>
+											</complexType>
+										</element>
+
+										<element name="EventDispatchers" minOccurs="0"
+											maxOccurs="unbounded">
+											<complexType>
+												<sequence>
+
+													<element name="EventDispatcher" minOccurs="0"
+														maxOccurs="unbounded">
+														<complexType>
+
+															<sequence>
+																<any namespace="http://attunedlabs.com/internalevents/Dispatcher"
+																	minOccurs="0" processContents="lax"></any>
+																<!-- The lax value of the processContents attribute instructs 
+																	an XML processor to validate the element content on a can-do basis: It will 
+																	validate elements and attributes for which it can obtain schema information, 
+																	but it will not signal errors for those it cannot obtain any schema information. -->
+																
+																<element name="EventTransformation">
+																	<complexType>
+																		<sequence>
+																			<element name="CustomTransformer"
+																				minOccurs="0" maxOccurs="unbounded">
+																				<complexType>
+																					<attribute name="fqcn" type="string"></attribute>
+																				</complexType>
+																			</element>
+																		</sequence>
+																		<attribute name="Type" type="string" use="required"></attribute>
+																	</complexType>
+																</element>
+
+															</sequence>
+														</complexType>
+													</element>
+
+												</sequence>
+											</complexType>
+										</element>
+
+									</sequence>
+
+									<attribute name="description" type="string"></attribute>
+									<attribute name="id" type="string"></attribute>
+									<attribute name="isEnabled" type="boolean"></attribute>
+
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+
+				<element name="Events">
+					<complexType>
+						<sequence>
+
+							<element name="Event" minOccurs="0" maxOccurs="unbounded">
+								<complexType>
+									<sequence>
+
+										<element name="EventParams" minOccurs="0"
+											maxOccurs="unbounded">
+											<complexType>
+												<sequence>
+
+													<element name="EventParam" minOccurs="0"
+														maxOccurs="unbounded">
+														<complexType>
+
+															<attribute name="dataType" type="string"></attribute>
+															<attribute name="name" type="string"></attribute>
+															<attribute name="validationRegEx" type="string"></attribute>
+
+														</complexType>
+													</element>
+
+												</sequence>
+											</complexType>
+										</element>
+
+										<element name="CamelEventProducer">
+											<complexType>
+												<sequence>
+
+													<element name="CamelProducerConfig">
+														<complexType>
+															<attribute name="component" type="string"></attribute>
+															<attribute name="feature" type="string"></attribute>
+															<attribute name="raiseOn" type="string"></attribute>
+															<attribute name="serviceName" type="string"></attribute>
+														</complexType>
+													</element>
+
+													<element name="CamelEventBuilder">
+														<complexType>
+															<sequence>
+
+																<element name="EventBuilder" minOccurs="0"
+																	maxOccurs="unbounded">
+																	<complexType>
+																		<attribute name="beanRefid" type="string"></attribute>
+																		<attribute name="fqcn" type="string"></attribute>
+																	</complexType>
+																</element>
+
+																<element name="OGNLMapping" minOccurs="0"
+																	maxOccurs="unbounded">
+																	<complexType>
+																		<sequence>
+
+																			<element name="Source">
+																				<complexType>
+																					<sequence>
+
+																						<element name="EventMapping" minOccurs="0"
+																							maxOccurs="unbounded">
+																							<complexType>
+																								<attribute name="destination"
+																									type="string"></attribute>
+																								<attribute name="source" type="string"></attribute>
+																							</complexType>
+																						</element>
+
+																					</sequence>
+
+																					<attribute name="from" type="string"></attribute>
+
+																				</complexType>
+																			</element>
+																		</sequence>
+																	</complexType>
+																</element>
+
+															</sequence>
+
+															<attribute name="type" type="string"></attribute>
+
+														</complexType>
+													</element>
+
+												</sequence>
+											</complexType>
+										</element>
+
+										<element name="EventDispatchers">
+											<complexType>
+												<sequence>
+
+													<element name="EventDispatcher">
+														<complexType>
+															<sequence>
+
+																<any
+																	namespace="http://attunedlabs.com/internalevents/Dispatcher"
+																	minOccurs="0" processContents="lax"></any>
+																<element name="EventTransformation">
+																	<complexType>
+																		<sequence>
+																			<any
+																				namespace="http://attunedlabs.com/internalevents/Dispatcher"
+																				minOccurs="0" processContents="lax"></any>
+
+																			<element name="CustomTransformer"
+																				minOccurs="0" maxOccurs="unbounded">
+																				<complexType>
+																					<attribute name="fqcn" type="string"></attribute>
+																				</complexType>
+																			</element>
+
+																		</sequence>
+																		<attribute name="Type" type="string"></attribute>
+																	</complexType>
+																</element>
+															</sequence>
+														</complexType>
+													</element>
+
+												</sequence>
+											</complexType>
+										</element>
+
+									</sequence>
+
+									<attribute name="description" type="string"></attribute>
+									<attribute name="id" type="string"></attribute>
+									<attribute name="isEnabled" type="boolean"></attribute>
+									<attribute name="type" type="string"></attribute>
+
+								</complexType>
+							</element>
+
+						</sequence>
+					</complexType>
+				</element>
+
+			</sequence>
+
+		</complexType>
+	</element>
+
+
+</schema>

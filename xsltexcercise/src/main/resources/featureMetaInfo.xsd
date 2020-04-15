@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<element name="Feature-Metainfo">
+		<complexType>
+			<sequence>
+
+				<element name="FeatureGroup">
+					<complexType>
+						<sequence>
+
+							<element name="Name" type="string"></element>
+
+							<element name="Features">
+								<complexType>
+									<sequence>
+
+										<element name="Feature" minOccurs="0"
+											maxOccurs="unbounded">
+											<complexType>
+												<sequence>
+
+													<element name="Name" type="string"></element>
+
+													<element name="FeatureImplementations">
+														<complexType>
+															<sequence>
+																<element name="FeatureImplementation">
+																	<complexType>
+																		<attribute name="resourceName" type="string"></attribute>
+																	</complexType>
+																</element>
+															</sequence>
+														</complexType>
+													</element>
+
+													<element name="StaticFileConfiguration">
+														<complexType>
+															<sequence>
+																<element name="ConfigFile">
+																	<complexType>
+																		<attribute name="filePath" type="string"></attribute>
+																		<attribute name="fileName" type="string"></attribute>
+																	</complexType>
+																</element>
+															</sequence>
+														</complexType>
+													</element>
+
+													<element name="DBConfiguration">
+														<complexType>
+															<sequence>
+
+																<element name="database">
+																	<complexType>
+																		<sequence>
+																			<element name="table" minOccurs="0"
+																				maxOccurs="unbounded">
+																				<complexType>
+																					<sequence>
+																						<element name="column" minOccurs="0"
+																							maxOccurs="unbounded">
+																							<complexType>
+																								<attribute name="name" type="string"></attribute>
+																								<attribute name="type" type="string"></attribute>
+																								<attribute name="primaryKey"
+																									type="boolean"></attribute>
+																								<attribute name="required"
+																									type="boolean"></attribute>
+																								<attribute name="size" type="int"></attribute>
+																								<attribute name="autoIncrement"
+																									type="boolean"></attribute>
+																							</complexType>
+																						</element>
+																					</sequence>
+
+																					<attribute name="name" type="string"></attribute>
+
+																				</complexType>
+																			</element>
+																		</sequence>
+
+																		<attribute name="name" type="string"></attribute>
+
+																	</complexType>
+																</element>
+
+															</sequence>
+														</complexType>
+													</element>
+
+												</sequence>
+
+												<attribute name="vendorName" type="string"></attribute>
+												<attribute name="vendorVersion" type="double"></attribute>
+												<attribute name="implementationName" type="string"></attribute>
+											</complexType>
+										</element>
+
+
+
+
+									</sequence>
+
+								</complexType>
+							</element>
+
+						</sequence>
+					</complexType>
+				</element>
+
+			</sequence>
+		</complexType>
+	</element>
+
+</schema>

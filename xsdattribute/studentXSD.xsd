@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/studentXSD"
+	xmlns:tns="http://www.example.org/studentXSD"
+	xmlns:nametypens="http://www.example.org/NameTypeXMLSchema"
+	xmlns:addtypens="http://www.example.org/AddressTypeXMLSchema"
+	xmlns:pincodens="http://www.example.org/PincodeTypeXMLSchema"
+	elementFormDefault="qualified">
+
+	<import namespace="http://www.example.org/NameTypeXMLSchema"
+		schemaLocation="NameTypeXMLSchema.xsd"></import>
+	<import namespace="	http://www.example.org/AddressTypeXMLSchema"
+		schemaLocation="AddressTypeXMLSchema.xsd"></import>
+	<import namespace="http://www.example.org/PincodeTypeXMLSchema"
+		schemaLocation="PincodeTypeXMLSchema.xsd"></import>
+
+
+
+	<element name="students"> 
+		<complexType>
+			<sequence>
+
+				<element name="student" minOccurs="1" maxOccurs="2">
+					<complexType>
+						<sequence>
+
+							<element name="name">
+								<complexType>
+								
+									<sequence>
+										<element name="first_name" type="nametypens:nametype"></element>
+										
+										<element name="last_name">
+                                          <complexType>
+                                            <simpleContent>
+                                             <extension base="string">
+                                              <attribute name="surname" type="string"></attribute>
+                                              
+                                             </extension>
+                                            </simpleContent>
+                                          </complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+
+							<element name="marks" type="int"></element>
+
+							<element name="address">
+								<complexType>
+									<sequence>
+										<element name="HNO" type="int"></element>
+										<element name="city" type="addtypens:addresstype"></element>
+										<element name="pincode" type="pincodens:pincodetype"></element>
+									</sequence>
+								</complexType>
+							</element>
+
+						</sequence>
+
+						<attribute name="r_no" type="int" use="required"></attribute>
+
+						<attribute name="schoolname" type="string"
+							default="jphs"></attribute>
+
+						<attribute name="academicyear" type="string"
+							fixed="2010"></attribute>
+					</complexType>
+				</element>
+
+			</sequence>
+		</complexType>
+	</element>
+</schema>

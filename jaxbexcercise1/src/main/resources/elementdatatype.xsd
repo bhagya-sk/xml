@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/attrdatatype"
+	xmlns:tns="http://www.example.org/attrdatatype"
+	elementFormDefault="qualified">
+
+
+
+	<simpleType name="attdatatype">
+		<restriction base="string">
+			<enumeration value="MANUAL"></enumeration>
+			<enumeration value="NATIVE"></enumeration>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="entityaccessconfigtype">
+		<restriction base="string">
+			<enumeration value="SQL"></enumeration>
+			<enumeration value="HAZALCAST"></enumeration>
+		</restriction>
+	</simpleType>
+
+	<attributeGroup name="entityattributes">
+		<attribute name="name" type="string" ></attribute>
+		<attribute name="sequence" type="int"></attribute>
+		<attribute name="mappedTo" type="string"></attribute>
+		<attribute name="required" type="string"></attribute>
+	</attributeGroup>
+
+	<complexType name="entitykeytype">
+	   <attributeGroup ref="tns:entityattributes"></attributeGroup>
+	</complexType>
+
+
+</schema>

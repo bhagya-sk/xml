@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/personinfoXMLSchema"
+	xmlns:tns="http://www.example.org/personinfoXMLSchema"
+	elementFormDefault="qualified">
+	
+	<import namespace="http://www.example.org/StudentXMLSchema"></import>
+
+	<element name="employee" type="tns:fullpersoninfo"></element>
+
+	<complexType name="personinfo">
+		<sequence>
+			<element name="firstname" type="string"></element>
+			<element name="lastname" type="string"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="fullpersoninfo">
+		<complexContent>
+			<extension base="tns:personinfo">
+				<sequence>
+					<element name="address" type="string"></element>
+					<element name="city" type="tns:citytype"></element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<simpleType name="citytype">
+		<restriction base="string">
+			<pattern value="[a-z]{10}"></pattern>
+		</restriction>
+	</simpleType>
+
+</schema>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/EmployeeXMLSchema"
+	xmlns:tns="http://www.example.org/EmployeeXMLSchema"
+	elementFormDefault="qualified">
+
+	<xs:complexType name="employeestype">
+		<xs:sequence>
+			<xs:element name="employee" type="tns:employeetype" minOccurs="1" maxOccurs="4"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="employeetype">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"></xs:element>
+			<xs:element name="salary" type="tns:salarylimit"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+  <xs:element name="globalemployee" type="tns:employeestype"></xs:element>
+  
+  <xs:simpleType name="salarylimit">
+     <xs:restriction base="xs:int">
+       <xs:minInclusive value="1000"></xs:minInclusive>
+       <xs:maxInclusive value="5000"></xs:maxInclusive>
+     </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

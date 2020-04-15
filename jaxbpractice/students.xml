@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<students>
+    <student>
+        <entry>
+            <key>1</key>
+            <value>
+                <firstName>a</firstName>
+                <lastName>b</lastName>
+                <rollNo>1</rollNo>
+            </value>
+        </entry>
+        <entry>
+            <key>2</key>
+            <value>
+                <firstName>a</firstName>
+                <lastName>b</lastName>
+                <rollNo>1</rollNo>
+            </value>
+        </entry>
+    </student>
+</students>

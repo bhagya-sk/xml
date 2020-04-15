@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/PincodeTypeXMLSchema"
+	xmlns:tns="http://www.example.org/PincodeTypeXMLSchema"
+	elementFormDefault="qualified">
+
+	<simpleType name="pincodetype">
+		<restriction base="string">
+			<minLength value="5"></minLength>
+			<maxLength value="6"></maxLength>
+		</restriction>
+	</simpleType>
+
+
+</schema>

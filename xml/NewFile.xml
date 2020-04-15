@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:employees xmlns:tns="http://www.example.org/EmployeesXMLSchema" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.example.org/EmployeesXMLSchema EmployeesXMLSchema.xsd ">
+  <tns:employee>
+    <tns:eid>1</tns:eid>
+    <tns:name>q</tns:name>
+    <tns:salary>90000</tns:salary>
+  </tns:employee>
+</tns:employees>

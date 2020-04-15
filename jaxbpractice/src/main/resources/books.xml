@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<books>
+
+	<book>
+		<title>Book title1</title>
+		<book>Book Name1</book>
+		<count>5</count>
+	</book>
+
+
+	<book>
+		<title>Book title2</title>
+		<book>Book Name3</book>
+		<count>5</count>
+	</book>
+	
+	<book>
+		<title>Book title3</title>
+		<book>Book Name3</book>
+		<count>4</count>
+	</book>
+</books>

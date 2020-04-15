@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://www.example.org/ImportExampleXMLSchema"
+ xmlns:ns="http://www.example.org/ImportExampleXMLSchema"
+ elementFormDefault="qualified">
+ 
+ <include schemaLocation="ImportExampleXMLSchemaType.xsd"/>
+ 
+ <element name ="students">
+  <complexType>
+   <sequence>
+    <element name="student">
+      <complexType>
+      <sequence>
+        <element name="r_no" type="int"></element>
+        <element name="name" type="ns:nametype"></element>
+      </sequence>
+      </complexType>
+    </element>
+   </sequence>
+  </complexType>
+ </element>
+</schema>

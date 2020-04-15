@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:songs xmlns:tns="http://www.example.org/KeyXMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/KeyXMLSchema KeyXMLSchema.xsd ">
+  <tns:Artists>
+    <tns:Artist aID="21">abc</tns:Artist>
+     <tns:Artist aID="21">def</tns:Artist>
+  </tns:Artists>
+  <tns:Lyrics>
+    <tns:Stanza Artist="abc">
+      <tns:Line>ssff</tns:Line>
+    </tns:Stanza>
+  </tns:Lyrics>
+</tns:songs>

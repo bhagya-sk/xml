@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<collection>
+ <movie>
+   <title>asd</title>
+   <year>2010</year>
+ </movie>
+
+ <movie>
+   <title>yui</title>
+   <year>2016</year>
+ </movie>
+
+ <movie>
+   <title>hjk</title>
+   <year>2018</year>
+ </movie>
+
+</collection>

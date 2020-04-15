@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://www.example.org/studentDT"
+ xmlns:tns="http://www.example.org/studentDT"
+  elementFormDefault="qualified">
+ 
+ <simpleType name="subjecttype">
+		<restriction base="string">
+			<enumeration value="maths"></enumeration>
+			<enumeration value="science"></enumeration>
+			<enumeration value="kannada"></enumeration>
+		</restriction>
+	</simpleType>
+</schema>

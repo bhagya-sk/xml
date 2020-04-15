@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:students xmlns:tns="http://www.example.org/StudentXMLSchema"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.example.org/StudentXMLSchema StudentXMLSchema.xsd ">
+  <tns:name>shweta</tns:name>
+  <tns:roll_no>21</tns:roll_no>
+  <tns:address>
+    <tns:city>kalaburagi</tns:city>
+    <tns:H_NO>789</tns:H_NO>
+    <tns:pincode>585102</tns:pincode>
+  </tns:address>
+  <tns:subjects>
+    <tns:subject>
+     <tns:marks>40</tns:marks>
+     <tns:maxmarks>100</tns:maxmarks>
+    </tns:subject>
+  </tns:subjects>
+</tns:students>

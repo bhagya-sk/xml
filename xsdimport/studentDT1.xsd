@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/studentDT1"   
+	xmlns:tns="http://www.example.org/studentDT1"
+	xmlns:ns="http://www.example.org/studentDT"
+	elementFormDefault="qualified">
+	
+	<import  namespace="http://www.example.org/studentDT" schemaLocation="studentDT.xsd "/>
+
+	<element name="students">
+		<complexType>
+			<sequence>
+				<element name="r_no" type="int"></element>
+				<element name="name" type="string"></element>
+				
+				<element name="subjects">
+					<complexType>
+						<sequence>
+							<element name="subject" type="ns:subjecttype">
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+				
+			</sequence>
+		</complexType>
+	</element>
+
+
+<!-- 
+<simpleType name="subjecttype">
+		<restriction base="string">
+			<enumeration value="maths"></enumeration>
+			<enumeration value="science"></enumeration>
+			<enumeration value="kannada"></enumeration>
+		</restriction>
+	</simpleType>
+ -->
+	</schema>

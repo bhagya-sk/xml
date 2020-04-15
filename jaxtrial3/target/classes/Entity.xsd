@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified"
+	>
+
+	<!-- <import namespace="http://www.example.org/attrdatatype" schemaLocation="elementdatatype.xsd 
+		" /> -->
+
+	<element name="LeapDataServices">
+		<complexType>
+			<sequence>
+				<element name="Entity" minOccurs="1" maxOccurs="unbounded">
+					<complexType>
+						<all>
+							<element name="EntityFields" minOccurs="0">
+								<complexType>
+									<sequence>
+										<element name="EntityField" maxOccurs="4">
+											<complexType>
+												<attribute name="name" type="string"></attribute>
+												<attribute name="type" type="string"></attribute>
+											</complexType>
+										</element>
+
+									</sequence>
+								</complexType>
+							</element>
+
+							<element name="EntityCollection" minOccurs="0">
+								<complexType>
+									<attribute name="collectionName" type="string"></attribute>
+									<attribute name="collectionType" type="string"></attribute>
+								</complexType>
+							</element>
+
+							<element name="EntityAccessConfig" minOccurs="0">
+								<complexType>
+									<sequence>
+										<element name="EntityTable" minOccurs="0"
+											maxOccurs="unbounded">
+											<complexType>
+												<sequence>
+
+													<element name="EntityColumns">
+														<complexType>
+															<sequence>
+
+																<element name="EntityColumn"
+																	maxOccurs="unbounded">
+																	<complexType>
+																		<sequence>
+
+																			<element name="Attribute"
+																				maxOccurs="unbounded">
+																				<complexType>
+																					<attribute name="name" type="string"></attribute>
+																					<attribute name="value" type="string"></attribute>
+																					<attribute name="attributeDatatype"
+																						type="string"></attribute>
+																					<attribute name="type">
+																						<simpleType>
+																							<restriction base="string">
+																								<enumeration value="MANUAL"></enumeration>
+																								<enumeration value="NATIVE"></enumeration>
+																							</restriction>
+																						</simpleType>
+																					</attribute>
+																					<attribute name="size" type="int"></attribute>
+																				</complexType>
+																			</element>
+
+																		</sequence>
+																		<attribute name="entityFieldNameRef"
+																			type="string"></attribute>
+																		<attribute name="hasAutoIncrement"
+																			type="boolean"></attribute>
+																		<attribute name="name" type="string"></attribute>
+																		<attribute name="sequence" type="int"></attribute>
+																	</complexType>
+
+																</element>
+
+															</sequence>
+														</complexType>
+													</element>
+
+													<element name="EntityIndexs">
+														<complexType>
+															<sequence>
+																<element name="EntityIndex">
+																	<complexType>
+																		<attribute name="entityColumnRef"
+																			type="string"></attribute>
+																	</complexType>
+																</element>
+															</sequence>
+														</complexType>
+													</element>
+
+												</sequence>
+
+
+
+												<attribute name="autoCreate" type="boolean"></attribute>
+												<attribute name="tablename" type="string"></attribute>
+											</complexType>
+										</element>
+
+										<element name="EntityAccess" minOccurs="1"
+											maxOccurs="unbounded">
+											<complexType>
+												<sequence>
+
+													<element name="EntityReadKeysMapping" minOccurs="0"
+														maxOccurs="unbounded">
+														<complexType>
+															<sequence>
+																<element name="EntityKey" minOccurs="0"
+																	maxOccurs="unbounded">
+																	<complexType>
+																		<attribute name="name" type="string"></attribute>
+																		<attribute name="sequence" type="int"></attribute>
+																		<attribute name="mappedTo" type="string"></attribute>
+																		<attribute name="required" type="string"></attribute>
+																	</complexType>
+																</element>
+															</sequence>
+														</complexType>
+													</element>
+
+													<element name="EntityInsertKeysMapping"
+														minOccurs="0">
+														<complexType>
+															<sequence>
+																<element name="EntityKey" minOccurs="0"
+																	maxOccurs="unbounded">
+																	<complexType>
+																		<attribute name="name" type="string"></attribute>
+																		<attribute name="sequence" type="int"></attribute>
+																		<attribute name="mappedTo" type="string"></attribute>
+																		<attribute name="required" type="string"></attribute>
+																	</complexType>
+																</element>
+															</sequence>
+														</complexType>
+													</element>
+
+													<element name="EntityUpdateKeysMapping"
+														minOccurs="0">
+														<complexType>
+															<sequence>
+																<element name="EntityKey" minOccurs="0"
+																	maxOccurs="unbounded">
+																	<complexType>
+																		<attribute name="name" type="string"></attribute>
+																		<attribute name="sequence" type="int"></attribute>
+																		<attribute name="mappedTo" type="string"></attribute>
+																		<attribute name="required" type="string"></attribute>
+																	</complexType>
+																</element>
+															</sequence>
+														</complexType>
+													</element>
+
+													<element name="EntityFilterKeysMapping"
+														minOccurs="0">
+														<complexType>
+															<sequence>
+																<element name="EntityKey" minOccurs="0"
+																	maxOccurs="unbounded">
+																	<complexType>
+																		<attribute name="name" type="string"></attribute>
+																		<attribute name="sequence" type="int"></attribute>
+																		<attribute name="mappedTo" type="string"></attribute>
+																		<attribute name="required" type="string"></attribute>
+																	</complexType>
+																</element>
+															</sequence>
+														</complexType>
+													</element>
+
+
+
+													<element name="LDCResponseConfigs" minOccurs="0"
+														maxOccurs="unbounded">
+														<complexType>
+															<sequence>
+																<element name="ApplyLDCConfig">
+																	<complexType>
+																		<sequence>
+
+																			<element name="LDCSchema">
+																				<complexType>
+																					<attribute name="required" type="boolean"></attribute>
+																					<attribute name="schemaFileName"
+																						type="string"></attribute>
+																				</complexType>
+																			</element>
+
+																			<element name="LDCProjection">
+																				<complexType>
+																					<attribute name="projectionFileName"
+																						type="string"></attribute>
+																					<attribute name="projectionSource"
+																						type="string"></attribute>
+																					<attribute name="required" type="boolean"></attribute>
+																				</complexType>
+																			</element>
+
+																			<element name="LDCTaxonomy">
+																				<complexType>
+																					<attribute name="required" type="boolean"></attribute>
+																				</complexType>
+																			</element>
+																		</sequence>
+
+																		<attribute name="applyAt" type="string"></attribute>
+																		<attribute name="sequence" type="int"></attribute>
+																	</complexType>
+																</element>
+															</sequence>
+														</complexType>
+													</element>
+
+												</sequence>
+
+												<attribute name="accessMethod" type="string"></attribute>
+												<attribute name="accessType" type="string"></attribute>
+												<attribute name="authorizedResource" type="string"></attribute>
+												<attribute name="isCollection" type="boolean"></attribute>
+											</complexType>
+										</element>
+
+									</sequence>
+									<attribute name="type">
+										<simpleType>
+											<restriction base="string">
+												<enumeration value="SQL"></enumeration>
+												<enumeration value="HAZALCAST"></enumeration>
+											</restriction>
+										</simpleType>
+									</attribute>
+								</complexType>
+							</element>
+						</all>
+						<attribute name="isEnable" type="string"></attribute>
+						<attribute name="name" type="string"></attribute>
+					</complexType>
+				</element>
+			</sequence>
+
+
+		</complexType>
+
+
+	</element>
+
+
+
+</schema>

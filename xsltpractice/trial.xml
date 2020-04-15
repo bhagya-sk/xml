@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type = "text/xsl" href = "trial.xsl"?> 
+
+<addresses>
+        <address sno="1">
+            <streetNo>1</streetNo>
+            <street>Wavell Street</street>
+            <suburb>Box Hill</suburb>
+            <state>VIC</state>
+            <zipcode>3128</zipcode>
+        </address>
+
+        <address sno="2">
+            <streetNo>5</streetNo>
+            <street>knkll Street</street>
+            <suburb>Box Hill</suburb>
+            <state>VIC</state>
+            <zipcode>3128</zipcode>
+        </address>
+</addresses>      

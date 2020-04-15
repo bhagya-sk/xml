@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/EmployeesXMLSchema"
+	xmlns:tns="http://www.example.org/EmployeesXMLSchema"
+	elementFormDefault="qualified">
+
+	<element name="employees">
+		<complexType>
+			<sequence>
+				<element name="employee">
+					<complexType>
+						<sequence>
+							<element name="eid">
+								<simpleType>
+									<restriction base="int">
+										<maxInclusive value="5"></maxInclusive>
+									</restriction>
+								</simpleType>
+							</element>
+							<element name="name" type="tns:nameType"></element>
+							<element name="salary" type="int"></element>
+						</sequence>
+					</complexType>
+
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+
+	<simpleType name="nameType">
+		<restriction base="string">
+			<pattern value="[qwe]"></pattern>
+		</restriction>
+	</simpleType>
+
+</schema>

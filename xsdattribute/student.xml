@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:students xmlns:tns="http://www.example.org/studentXSD"
+	xmlns:tns1="http://www.example.org/NameTypeXMLSchema"
+	xmlns:tns2="http://www.example.org/PincodeTypeXMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/studentXSD studentXSD.xsd ">
+	<tns:student r_no="10">
+		<tns:name>
+			<tns:first_name>mansi</tns:first_name>
+			<tns:last_name surname="a">k</tns:last_name>
+		</tns:name>
+		<tns:marks>50</tns:marks>
+		<tns:address>
+			<tns:HNO>1245</tns:HNO>
+			<tns:city>kalaburagi</tns:city>
+			<tns:pincode>585102</tns:pincode>
+		</tns:address>
+	</tns:student>
+</tns:students>

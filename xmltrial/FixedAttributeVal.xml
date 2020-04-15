@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE students [
+ <!ELEMENT students (student)>
+ <!ELEMENT student (name, roll_no)>
+ <!ELEMENT name (#PCDATA)>
+ <!ELEMENT roll_no (#PCDATA)>
+ <!ATTLIST student usn CDATA #FIXED '1235'> 
+]>
+
+<students>
+ 
+ <student usn='1235'> <!-- value of usn cannot be changed -->
+  <name>shweta</name>
+  <roll_no>45</roll_no>
+ </student>
+
+
+</students>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:students xmlns:tns="http://www.example.org/studentDT1" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.example.org/studentDT1 studentDT1.xsd ">
+  <tns:r_no>1</tns:r_no>
+  <tns:name>shweta</tns:name>
+  <tns:subjects>
+    <tns:subject>kannada</tns:subject>
+  </tns:subjects>
+</tns:students>
